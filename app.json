@@ -2,6 +2,7 @@
   "expo": {
     "name": "test-gha",
     "slug": "test-gha",
+    "scheme": "biepboep",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -12,7 +13,8 @@
       "backgroundColor": "#ffffff"
     },
     "updates": {
-      "fallbackToCacheTimeout": 0
+      "fallbackToCacheTimeout": 0,
+      "url": "https://u.expo.dev/69e6d2b0-2687-4712-96a3-c123601f73a8"
     },
     "assetBundlePatterns": [
       "**/*"
@@ -33,6 +35,9 @@
       "eas": {
         "projectId": "69e6d2b0-2687-4712-96a3-c123601f73a8"
       }
+    },
+    "runtimeVersion": {
+      "policy": "sdkVersion"
     }
   }
 }

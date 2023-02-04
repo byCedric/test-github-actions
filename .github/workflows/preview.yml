@@ -34,6 +34,14 @@ jobs:
         run: yarn install
 
       - name: 🚀 Publish preview
+        id: preview
         uses: expo/expo-github-action/preview@feature/preview-eas-support
         with:
           command: eas update --auto
+
+      # See: https://github.com/orgs/community/discussions/26288
+      - name: 📖 Add job summary
+        shell: bash
+        run: |
+          echo ${{ steps.preview.ouputs.comment }} | while IFS= read -r line ; do echo $line >> $GITHUB_STEP_SUMMARY; done
+
