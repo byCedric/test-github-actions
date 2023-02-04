@@ -32,4 +32,8 @@ jobs:
         run: yarn install
 
       - name: 🚀 Publish preview
-        run: eas update --auto
+        id: preview
+        run: echo "result=$(eas update --auto --json --non-interactive | jq -s -c)" >> $GITHUB_OUTPUT
+
+      - name: 📖 Read output
+        run: echo ${{ steps.preview.outputs.result }}
