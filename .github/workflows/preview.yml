@@ -36,4 +36,4 @@ jobs:
       - name: 🚀 Publish preview
         uses: expo/expo-github-action/preview@feature/preview-eas-support
         with:
-          command: eas update --auto
+          command: eas update --auto --platform android
