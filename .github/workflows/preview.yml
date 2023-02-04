@@ -12,6 +12,8 @@ concurrency:
 jobs:
   mobile:
     runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
     steps:
       - name: 🏗 Setup repository
         uses: actions/checkout@v3
