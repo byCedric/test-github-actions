@@ -23,7 +23,7 @@ jobs:
           cache: yarn
 
       - name: 🏗 Setup Expo
-        uses: expo/expo-github-action@v7
+        uses: expo/expo-github-action@feature/preview-eas-support
         with:
           eas-version: latest
           token: ${{ secrets.EXPO_TOKEN }}
@@ -32,8 +32,6 @@ jobs:
         run: yarn install
 
       - name: 🚀 Publish preview
-        id: preview
-        run: echo "result=$(eas update --auto --json --non-interactive | jq -s -c)" >> $GITHUB_OUTPUT
-
-      - name: 📖 Read output
-        run: echo ${{ steps.preview.outputs.result }}
+        uses: expo/expo-github-action/preview@feature/preview-eas-support
+        with:
+          command: eas update --auto
